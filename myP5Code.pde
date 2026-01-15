@@ -10,6 +10,7 @@ void setup() {
  var eyeY = 106
  var mouthX = 421
  var mouthY = 170
+ var OmNom = 10
  var LegX = 310
  var LegY = 310
  var Hidex = 420
@@ -55,7 +56,7 @@ draw = function(){
     strokeWeight(1); //mouth
     stroke(0,0,0);
     fill(156, 89, 87);
-    ellipse(mouthX, mouthY, 90, 110);
+    ellipse(mouthX, mouthY, 90, OmNom);
 
 
     fill(175, 227, 222); //flywings
@@ -69,7 +70,11 @@ draw = function(){
     //CODE 
 
     FlyX += 2;
-    if(FlyX > 466){FlyX = 30};
+    if(FlyX > 450){FlyX = -90; OmNom = 10};
+
+  if(OmNom<110 && FlyX > 30){OmNom += 1;}
+  //if(OmNom > 110){}
+ 
 
   //Show x y values when mousepressed
   if(mousePressed){showXYPositions();}
